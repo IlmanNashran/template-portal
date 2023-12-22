@@ -42,4 +42,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function technician()
+    {
+        return $this->hasOne(User::class, 'technician_id','id');
+    }
+
+    public function supervisor()
+    {
+        return $this->hasOne(User::class,'supervisor_id','id');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
