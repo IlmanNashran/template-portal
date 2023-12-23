@@ -114,7 +114,9 @@
                                                     <i class="fas fa-cog"></i>
                                                 </button>
                                                 <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="#">Papar</a></li>
+                                                    @if($complaint->status == 'Baharu')
+                                                        <li><a class="dropdown-item" href="#">Papar</a></li>
+                                                    @endif
                                                     <li><a class="dropdown-item" href="#">Edit</a></li>
                                                 </ul>
                                                 </div>

@@ -38,13 +38,13 @@
                                 <div class="row">
                                     <div class="mt-3 col-md-4">
                                         <div class="card bg-light text-white">
-                                            <a href="#">
+                                            <a href="{{route('complaints.index')}}">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_complaints }}</h5>
                                                     <p class="card-text">Aduan</p>
                                                 </div>
                                                 <div class="card-footer bg-success p-2">
-                                                    <a href="#" class="text-black">Lihat lebih lanjut >></a>
+                                                    <a href="{{route('complaints.index')}}" class="text-black">Lihat lebih lanjut >></a>
                                                 </div>
                                             </a>
                                         </div>
