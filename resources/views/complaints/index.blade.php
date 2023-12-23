@@ -61,6 +61,15 @@
 
                         <!--begin::Card body-->
                         <div class="card-body py-4">
+                            <!-- Button to create complaint-->
+                            <div class="mb-3 d-flex">
+                                <div class="ms-auto">
+                                    <a href="{{ route('complaints.create') }}" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-plus"></i> Aduan Baharu
+                                    </a>
+                                </div>
+                            </div>
+
                             <!-- Create table all complaint-->
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover" id="complaintsTable" style="display: none;">
@@ -73,7 +82,7 @@
                                             <th scope="col">Blok</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">PIC</th>
-                                            <th scope="col">Tindakan</th>
+                                            <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -86,7 +95,16 @@
                                             <td>{{ $complaint->block }}</td>
                                             <td><span class="badge {{ $complaint->getStatusBadgeClass() }}">{{ $complaint->status }}</span></td>
                                             <td>{{ $complaint->technician->name }}</td>
-                                            <td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fas fa-cog"></i>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Papar</a></li>
+                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                </ul>
+                                                </div>
                                             </td>
                                         </tr>
                                         @endforeach

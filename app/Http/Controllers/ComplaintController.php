@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Complaint;
+use App\Models\Category;
 
 class ComplaintController extends Controller
 {
@@ -11,6 +12,11 @@ class ComplaintController extends Controller
     {   
         $complaints = Complaint::all();
         return view('complaints.index', compact('complaints'));
+    }
+
+    public function create(){
+        $categories = Category::all()->sortBy('name');
+        return view('complaints.create', compact('categories'));
     }
 
 }
