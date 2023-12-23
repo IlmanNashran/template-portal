@@ -57,7 +57,18 @@
                             </div>
                         </div>
 
-                        <!-- <div id="tableauViz"></div> -->
+                        
+                        <!-- display message success or error -->
+                        @if(session('success'))
+                            <div class="alert alert-primary m-5">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        @if(session('error'))
+                            <div class="alert alert-danger m-5">
+                                {{ session('error') }}
+                            </div>
+                        @endif
 
                         <!--begin::Card body-->
                         <div class="card-body py-4">
@@ -76,6 +87,7 @@
                                     <thead class="thead-light">
                                         <tr>
                                             <th scope="col">No.</th>
+                                            <th scope="col">No aduan</th>
                                             <th scope="col">Nama</th>
                                             <th scope="col">Tarikh</th>
                                             <th scope="col">Kategori</th>
@@ -89,12 +101,13 @@
                                         @foreach($complaints as $complaint)
                                         <tr>
                                             <th scope="row">{{ $loop->iteration }}</th>
+                                            <th scope="row">{{ $complaint->report_no ?? null }}</th>
                                             <td>{{ $complaint->user->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($complaint->created_at)->format('Y-m-d') }}</td>
                                             <td>{{ $complaint->category->name }}</td>
                                             <td>{{ $complaint->block }}</td>
                                             <td><span class="badge {{ $complaint->getStatusBadgeClass() }}">{{ $complaint->status }}</span></td>
-                                            <td>{{ $complaint->technician->name }}</td>
+                                            <td>{{ $complaint->technician->name ?? null }}</td>
                                             <td class="text-center">
                                                 <div class="btn-group">
                                                 <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
