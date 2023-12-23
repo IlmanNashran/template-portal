@@ -9,7 +9,7 @@
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Aduan</li>
+                        <li class="breadcrumb-item text-muted">Laporan</li>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <li class="breadcrumb-item">
@@ -17,7 +17,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Semua Aduan</li>
+                        <li class="breadcrumb-item text-muted">Kategori</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->         
@@ -25,7 +25,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5>
-                                    <i class="fas fa-file"></i> SEMUA ADUAN
+                                    <i class="fas fa-file"></i> LAPORAN ADUAN MENGIKUT KATEGORI BAGI TAHUN {{$selected_year}}
                                 </h5>
                             </div>
                         </div>
@@ -51,23 +51,24 @@
                                 </div>
                             </form>
 
-
-                            <div class="table-responsive">
-                                <table class="table table-bordered" style="padding:5px !important;">
-                                    <thead class="bg-dark text-white">
+                            <div class="mt-2 table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <thead class="thead-dark">
                                         <tr>
-                                            <td rowspan="2" class="text-center">Kategori</td>
-                                            <td colspan="12" class="text-center">Bulan</td>
+                                            <th rowspan="2" class="text-center table-success">No</td>
+                                            <th rowspan="2" class="text-center table-success">Kategori</td>
+                                            <th colspan="12" class="text-center table-success">Bulan</td>
                                         </tr>
                                         <tr>
                                             @for ($month = 1; $month <= 12; $month++)
-                                                <th class="text-center" style="width: 50px;">{{ $month }}</th>
+                                                <th class="text-center table-success" style="width: 50px;">{{ $month }}</th>
                                             @endfor
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($report as $row)
+                                        @foreach ($report as $index => $row)
                                             <tr>
+                                                <td class="text-center">{{ $index + 1 }}</td>
                                                 <td>{{ $row['category'] }}</td>
                                                 @php
                                                     $totalForCategory = 0;
@@ -83,9 +84,9 @@
                                     </tbody>
                                     <tfoot class="bg-dark text-white">
                                         <tr>
-                                            <td>Jumlah</td>
+                                            <th colspan="2" class="table-success">Jumlah</th>
                                             @for ($month = 1; $month <= 12; $month++)
-                                                <td class="text-center">
+                                                <th class="text-center table-success">
                                                     @php
                                                         $totalForMonth = 0;
                                                         foreach ($report as $row) {
@@ -93,13 +94,13 @@
                                                         }
                                                         echo $totalForMonth;
                                                     @endphp
-                                                </td>
+                                                </th>
                                             @endfor
                                         </tr>
                                     </tfoot>
                                 </table>
                             </div>
-                            </div>
+                        </div>
                         <!--end::Card body-->
                     </div>
                 </div>

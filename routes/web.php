@@ -28,3 +28,4 @@ Route::get('/complaints',[ComplaintController::class, 'index'])->name('complaint
 Route::get('/complaints/create',[ComplaintController::class, 'create'])->name('complaints.create');
 
 Route::get('/reports/category',[ReportController::class, 'fetchCategoryCount'])->name('reports.category');
+Route::get('/reports/status',[ReportController::class, 'fetchStatusCount'])->name('reports.status');

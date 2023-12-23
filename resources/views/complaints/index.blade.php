@@ -72,6 +72,7 @@
                                             <th scope="col">Kategori</th>
                                             <th scope="col">Blok</th>
                                             <th scope="col">Status</th>
+                                            <th scope="col">PIC</th>
                                             <th scope="col">Tindakan</th>
                                         </tr>
                                     </thead>
@@ -84,6 +85,7 @@
                                             <td>{{ $complaint->category->name }}</td>
                                             <td>{{ $complaint->block }}</td>
                                             <td><span class="badge {{ $complaint->getStatusBadgeClass() }}">{{ $complaint->status }}</span></td>
+                                            <td>{{ $complaint->technician->name }}</td>
                                             <td>
                                             </td>
                                         </tr>

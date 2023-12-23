@@ -48,14 +48,14 @@ class User extends Authenticatable
         return $this->belongsTo(User::class);
     }
 
-    public function technician()
+    public function taskAssigned()
     {
-        return $this->hasOne(User::class, 'technician_id','id');
+        return $this->hasOne(Complaint::class,'technician_id');
     }
 
-    public function supervisor()
+    public function taskSupervised()
     {
-        return $this->hasOne(User::class,'supervisor_id','id');
+        return $this->hasOne(Complaint::class,'supervisor_id');
     }
 
     public function category()

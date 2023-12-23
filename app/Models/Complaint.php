@@ -16,12 +16,12 @@ class Complaint extends Model
 
     public function technician()
     {
-        return $this->belongsTo(Technician::class,'id','technician_id');
+        return $this->belongsTo(User::class,'technician_id','id');
     }
 
     public function supervisor()
     {
-        return $this->belongsTo(Supervisor::class,'id','supervisor_id');
+        return $this->belongsTo(User::class,'supervisor_id','supervisor_id');
     }
 
     public function category()
