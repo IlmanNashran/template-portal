@@ -36,5 +36,9 @@ class ComplaintController extends Controller
 
         return redirect()->route('complaints.index')->with('success', $message);
     }
+
+    public function show(Complaint $complaint){
+        return view('complaints.show',compact('complaint'));
+    }
 }
 

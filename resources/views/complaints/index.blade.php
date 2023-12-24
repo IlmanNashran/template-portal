@@ -115,7 +115,7 @@
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     @if($complaint->status == 'Baharu')
-                                                        <li><a class="dropdown-item" href="#">Papar</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('complaints.show', $complaint) }}">Papar</a></li>
                                                     @endif
                                                     <li><a class="dropdown-item" href="#">Edit</a></li>
                                                 </ul>
