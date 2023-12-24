@@ -76,7 +76,7 @@
                             <div class="mb-3 d-flex">
                                 <div class="ms-auto">
                                     <a href="{{ route('complaints.create') }}" class="btn btn-sm btn-primary">
-                                        <i class="fas fa-plus"></i> Aduan Baharu
+                                        <i class="fas fa-plus"></i> Aduan
                                     </a>
                                 </div>
                             </div>
@@ -86,27 +86,27 @@
                                 <table class="table table-bordered table-hover" id="complaintsTable" style="display: none;">
                                     <thead class="thead-light">
                                         <tr>
-                                            <th scope="col">No.</th>
-                                            <th scope="col">No aduan</th>
-                                            <th scope="col">Nama</th>
+                                            <th scope="col text-nowrap">No.</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">No Aduan</th>
                                             <th scope="col">Tarikh</th>
+                                            <th scope="col">Pelapor</th>
                                             <th scope="col">Kategori</th>
                                             <th scope="col">Blok</th>
-                                            <th scope="col">Status</th>
                                             <th scope="col">PIC</th>
-                                            <th scope="col"></th>
+                                            <th scope="col">Tindakan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($complaints as $complaint)
                                         <tr>
                                             <th scope="row">{{ $loop->iteration }}</th>
+                                            <td><span class="badge {{ $complaint->getStatusBadgeClass() }}">{{ $complaint->status }}</span></td>
                                             <th scope="row">{{ $complaint->report_no ?? null }}</th>
+                                            <td>{{ \Carbon\Carbon::parse($complaint->created_at)->format('d-m-Y') }}</td>
                                             <td>{{ $complaint->user->name }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($complaint->created_at)->format('Y-m-d') }}</td>
                                             <td>{{ $complaint->category->name }}</td>
                                             <td>{{ $complaint->block }}</td>
-                                            <td><span class="badge {{ $complaint->getStatusBadgeClass() }}">{{ $complaint->status }}</span></td>
                                             <td>{{ $complaint->technician->name ?? null }}</td>
                                             <td class="text-center">
                                                 <div class="btn-group">
