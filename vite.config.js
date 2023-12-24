@@ -3,6 +3,10 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
+
+    build: {
+        outDir: 'public/build', // Adjust the path as needed
+    },
     plugins: [
         laravel({
             input: [
