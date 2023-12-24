@@ -82,7 +82,7 @@
                                             </div>
                                         </div>
 
-                                        <button type="submit" class="btn btn-sm btn-primary" style="min-width:100%;">
+                                        <button type="submit" class="mt-5 btn btn-sm btn-primary" style="min-width:100%;">
                                             Log Masuk
                                         </button>
 
