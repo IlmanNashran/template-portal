@@ -25,7 +25,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5>
-                                    <i class="fas fa-chart-bar"></i> DASHBOARD!!!
+                                    <i class="fas fa-chart-bar"></i> DASHBOARD
                                 </h5>
                             </div>
                         </div>
