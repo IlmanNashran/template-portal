@@ -24,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $today = date('d-m-Y');
+
         $complaints = Complaint::all();
         $total_complaints = Complaint::all()->count();
         $total_completed_complaints = Complaint::where('status', 'Selesai')->count();
@@ -32,6 +34,6 @@ class HomeController extends Controller
         $total_rated_complaints = Complaint::where('status', 'Dinilai')->count();
         $total_kiv_complaints = Complaint::where('status', 'KIV')->count();
 
-        return view('home',compact('complaints', 'total_complaints', 'total_completed_complaints', 'total_new_complaints', 'total_responded_complaints', 'total_rated_complaints', 'total_kiv_complaints'));
+        return view('home',compact('today','complaints', 'total_complaints', 'total_completed_complaints', 'total_new_complaints', 'total_responded_complaints', 'total_rated_complaints', 'total_kiv_complaints'));
     }
 }
