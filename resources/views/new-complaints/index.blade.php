@@ -45,7 +45,8 @@
 
                         <!--begin::Card body-->
                         <div class="card-body py-4">
-
+                            <!-- Display total complaints -->
+                            <h5 class="m-5 text-danger">Jumlah Aduan: {{$complaints->count()}}</h5>
                             <div class="row">
                                 @foreach($complaints as $complaint)
                                     <div class="col-md-4 mb-3">
@@ -63,7 +64,8 @@
                                                     ({{ \Carbon\Carbon::parse($complaint->created_at)->diffForHumans() }})
                                                 </p>
                                                 <p class="card-text">
-                                                    <strong>Pelapor:</strong> {{ $complaint->user->name }}<br>
+                                                    <strong>Pelapor:</strong> <br>
+                                                    {{ $complaint->user->name }}<br>
                                                     {{ $complaint->user->mobile_no }}
                                                 </p>
                                                 <p class="card-text">
