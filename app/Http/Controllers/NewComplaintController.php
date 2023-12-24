@@ -10,7 +10,12 @@ class NewComplaintController extends Controller
 {
     public function index(){
         $complaints = Complaint::where('status', 'Baharu')->latest()->get();
-        return view('new-complaints.index', compact('complaints'));
+
+        $technicians = User::where('role', 'technician')
+        ->orWhere('role', 'supervisor')
+        ->get();
+
+        return view('new-complaints.index', compact('complaints','technicians'));
     }
 
     public function edit(Complaint $complaint){

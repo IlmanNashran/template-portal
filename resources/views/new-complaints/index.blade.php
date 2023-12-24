@@ -75,14 +75,26 @@
                                                     <strong>Kategori:</strong> {{ $complaint->category->name }}
                                                 </p>
                                                 <p class="card-text">
-                                                    <strong>Lokasi:</strong> {{ $complaint->location}}                                                </p>
+                                                    <strong>Lokasi:</strong> {{ $complaint->location}} 
+                                                </p>
                                                 <p class="card-text">
                                                     <strong>Deskripsi:</strong><br>
                                                     {{ $complaint->description }}
                                                 </p>
-                                                <div class="text-center">
-                                                    <a href="{{ route('new-complaints.edit', $complaint) }}" class="btn btn-sm btn-warning" style="padding: 5px;">Assign to &rarr;</a>
-                                                </div>
+                                                <form method="post">
+                                                    @csrf
+                                                    <div class="mb-3">
+                                                        <select class="form-select" id="technician" name="technician_id">
+                                                            <option value="">Pilih Juruteknik</option>
+                                                            @foreach($technicians as $technician)
+                                                                <option value="{{ $technician->id }}">{{ $technician->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-sm btn-primary">
+                                                        <i class="fas fa-check"></i> Kemaskini
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
