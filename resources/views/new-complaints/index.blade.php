@@ -157,7 +157,7 @@
                                                         </p>
                                                         <p class="card-text">
                                                             <strong>PIC:</strong><br>
-                                                            {{ $complaint->technician_id->user->name }}
+                                                            {{ $complaint->auth()->user()->name }}
                                                         </p>
                                                         <form method="post" action="{{ route('new-complaints.update-technician', $complaint) }}">
                                                             @csrf
