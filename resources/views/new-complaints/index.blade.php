@@ -155,10 +155,7 @@
                                                             <strong>Deskripsi:</strong><br>
                                                             {{ $complaint->description }}
                                                         </p>
-                                                        <p class="card-text">
-                                                            <strong>PIC:</strong><br>
-                                                            {{ $complaint->technician->name }}
-                                                        </p>
+        
                                                         <form method="post" action="{{ route('new-complaints.update-technician', $complaint) }}">
                                                             @csrf
                                                             <div class="mb-3">
