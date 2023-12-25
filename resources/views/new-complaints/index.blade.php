@@ -138,7 +138,7 @@
                                                             ({{ \Carbon\Carbon::parse($complaint->created_at)->diffForHumans() }})
                                                         </p>
                                                         <p class="card-text">
-                                                            <strong>Pelapor:</strong>{{ $complaint->user->name }}<br>
+                                                            <strong>Pelapor: </strong>{{ $complaint->user->name }}<br>
                                                             {{ $complaint->user->mobile_no }}
                                                         </p>
                                                         <p class="card-text">
@@ -199,8 +199,7 @@
                                                             ({{ \Carbon\Carbon::parse($complaint->created_at)->diffForHumans() }})
                                                         </p>
                                                         <p class="card-text">
-                                                            <strong>Pelapor:</strong><br>
-                                                            {{ $complaint->user->name }}<br>
+                                                            <strong>Pelapor: </strong>{{ $complaint->user->name }}<br>
                                                             {{ $complaint->user->mobile_no }}
                                                         </p>
                                                         <p class="card-text">
@@ -221,12 +220,12 @@
                                                             <div class="mb-3">
                                                                 <select class="form-select" id="status" name="status">
                                                                     <option value="">Pilih Status</option>
-                                                                    <option value="Dijawab">Terima</option>
+                                                                    <option value="Dijawab">Dijawab</option>
                                                                     <option value="KIV">KIV</option>
                                                                 </select>
                                                             </div>
                                                             <div class="mb-3">
-                                                                <textarea class="form-control" id="technician_remark" name="technician_remark" placeholder="Catatan Juruteknik" rows="3"></textarea>
+                                                                <textarea class="form-control" id="technician_remark" name="technician_remark" placeholder="Catatan" rows="3"></textarea>
                                                             </div>
 
                                                             <button type="submit" class="btn btn-sm btn-primary">

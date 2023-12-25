@@ -45,7 +45,7 @@ class NewComplaintController extends Controller
     }
 
     public function updateStatus(Request $request, Complaint $complaint){
-        $complaint->status = 'Dijawab';
+        $complaint->status = request('status');
         $complaint->technician_remark = request('technician_remark');
         $complaint->responded_at = now();
         $complaint->save();

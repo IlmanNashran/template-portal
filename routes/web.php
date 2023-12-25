@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\NewComplaintController;
+use App\Http\Controllers\RespondedComplaintController;
 use App\Http\Controllers\ReportController;
 
 /*
@@ -34,6 +35,8 @@ Route::get('/new-complaints',[NewComplaintController::class, 'index'])->name('ne
 Route::post('/new-complaints/{complaint}/update-technician',[NewComplaintController::class, 'updateTechnician'])->name('new-complaints.update-technician');
 Route::post('/new-complaints/{complaint}/update-status',[NewComplaintController::class, 'updateStatus'])->name('new-complaints.update-status');
 
+Route::get('/responded-complaints',[RespondedComplaintController::class, 'index'])->name('responded-complaints.index');
+Route::post('/responded-complaints/{complaint}/update-status',[RespondedComplaintController::class, 'updateStatus'])->name('responded-complaints.update-status');
 
 Route::get('/reports/category',[ReportController::class, 'fetchCategoryCount'])->name('reports.category');
 Route::get('/reports/status',[ReportController::class, 'fetchStatusCount'])->name('reports.status');

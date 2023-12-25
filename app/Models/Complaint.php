@@ -37,6 +37,7 @@ class Complaint extends Model
             case 'Selesai':
                 return 'badge-primary';
             case 'Baharu':
+                return 'badge-warning';
             case 'Dijawab':
                 return 'badge-success';
             case 'KIV':
