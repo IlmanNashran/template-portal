@@ -24,7 +24,7 @@
                 
                 <!--begin::Heading-->
                 <div class="menu-item mb-2">
-                    <div class="menu-heading text-uppercase fs-7 fw-bold text-white">SISTEM ADUAN KEROSAKAAN FGVIC</div>
+                    <div class="menu-heading text-uppercase fs-7 fw-bold text-white">SISTEM ADUAN KEROSAKAN FGVIC</div>
                     <!--begin::Separator-->
                     <div class="app-sidebar-separator separator"></div>
                     <!--end::Separator-->
@@ -192,7 +192,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Aduan mengikut petugas</span>
+                                <span class="menu-title">Aduan mengikut PIC</span>
                             </a>
                             <!--end:Menu link-->
                         </div>

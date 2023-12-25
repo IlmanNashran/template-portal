@@ -45,7 +45,7 @@
                                 <div class="row">
                                     <div class="mt-3 col-md-4">
                                         <div class="card bg-light text-white">
-                                            <a href="#">
+                                            <a href="{{ route('complaints.index') }}">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_complaints }}</h5>
                                                     <p class="card-text">Aduan</p>
@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="mt-3 col-md-4">
                                         <div class="card bg-light text-white">
-                                            <a href="#">
+                                            <a href="{{ route('new-complaints.index') }}">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_new_complaints }}</h5>
                                                     <p class="card-text">Baharu</p>
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="mt-3 col-md-4">
                                         <div class="card bg-light text-white">
-                                            <a href="#">
+                                            <a href="{{ route('responded-complaints.index') }}">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_responded_complaints }}</h5>
                                                     <p class="card-text">Dijawab</p>
@@ -97,7 +97,7 @@
                                     </div>
                                     <div class="mt-3 col-md-4">
                                         <div class="card bg-light text-white">
-                                            <a href="#">
+                                            <a href="{{ route('to-rate-complaints.index') }}">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_rated_complaints }}</h5>
                                                     <p class="card-text">Untuk Dinilai</p>
@@ -110,7 +110,7 @@
                                     </div>
                                     <div class="mt-3 col-md-4">
                                         <div class="card bg-light text-white">
-                                            <a href="#">
+                                            <a href="{{ route('kiv-complaints.index') }}">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_kiv_complaints }}</h5>
                                                     <p class="card-text">KIV</p>

@@ -26,7 +26,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5>
-                                    <i class="fas fa-file"></i> LAPORAN ADUAN STATUS
+                                    <i class="fas fa-file"></i> LAPORAN ADUAN MENGIKUT PIC
                                 </h5>
                             </div>
                         </div>
