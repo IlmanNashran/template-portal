@@ -35,18 +35,27 @@
                     </ul>
                     <!--end::Breadcrumb-->         
                     <div class="card mt-2">
-                        <div class="card-header">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5>
-                                    <i class="fas fa-file"></i> PAPAR ADUAN
-                                </h5>
-                            </div>
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5>
+                                <i class="fas fa-file"></i> PAPAR ADUAN <span class="badge {{ $complaint->getStatusBadgeClass() }}">{{ $complaint->status }}</span>
+                            </h5>
                         </div>
+                        @if($complaint->status === 'Ditolak' && $complaint->remark)
+                            <p class="card-text">
+                                <br><strong>Catatan:</strong><br>
+                                {!! nl2br(e($complaint->remark)) !!}
+                            </p>
+                        @endif  
+                    </div>
+
+
+
 
                         <!--begin::Card body-->
                         <div class="card-body py-4">
                             <ul class="list-group">
-                                <h5 style="margin-left:10px;margin-top:20px;">Maklumat Aduan</h5> <hr>
+                                <h5 style="margin-left:10px;margin-top:20px;">Maklumat Aduan </h5> <hr>
                                 <li class="list-group-item">
                                     <strong>No Aduan:</strong> {{ $complaint->report_no ?? 'N/A' }}
                                 </li>
@@ -67,7 +76,7 @@
                                 </li>
                                 <h5 style="margin-left:10px;margin-top:20px;">Maklumat Kerja</h5> <hr>
                                 <li class="list-group-item">
-                                    <strong>Juruteknik:</strong> {{ optional($complaint->technician)->name ?? 'N/A' }}
+                                    <strong>PIC:</strong> {{ optional($complaint->technician)->name ?? 'N/A' }}
                                 </li>
                                 <li class="list-group-item">
                                     <strong>Dijawab pada:</strong> {{ $complaint->responded_at ?? 'N/A' }}
@@ -76,7 +85,7 @@
                                     <strong>Disiap pada:</strong> {{ $complaint->completed_at ?? 'N/A' }}
                                 </li>
                                 <li class="list-group-item">
-                                    <strong>Catatan Juruteknik:</strong> {{ $complaint->technician_remark ?? 'N/A' }}
+                                    <strong>Catatan PIC:</strong> {{ $complaint->technician_remark ?? 'N/A' }}
                                 </li>
                                 <li class="list-group-item">
                                     <strong>Penyelia:</strong> {{ optional($complaint->supervisor)->name ?? 'N/A' }}

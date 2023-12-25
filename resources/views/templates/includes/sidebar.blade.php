@@ -85,6 +85,7 @@
                         <!--end:Menu item-->
                         
                         <!--begin:Menu item-->
+                        @if(auth()->user()->role === 'technician' || auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor')
                         <div class="menu-item">
                             <!--begin:Menu link-->
                             <a class="menu-link" href="{{ route('new-complaints.index') }}">
@@ -95,9 +96,11 @@
                             </a>
                             <!--end:Menu link-->
                         </div>
+                        @endif
                         <!--end:Menu item-->
 
                         <!--begin:Menu item-->
+                        @if(auth()->user()->role === 'technician' || auth()->user()->role === 'supervisor')
                         <div class="menu-item">
                             <!--begin:Menu link-->
                             <a class="menu-link" href="{{ route('responded-complaints.index') }}">
@@ -108,38 +111,42 @@
                             </a>
                             <!--end:Menu link-->
                         </div>
+                        @endif
                         <!--end:Menu item-->
 
                         <!--begin:Menu item-->
+                        @if(auth()->user()->role === 'staff')
                         <div class="menu-item">
                             <!--begin:Menu link-->
                             <a class="menu-link" href="#">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Dinilai</span>
+                                <span class="menu-title">untuk Dinilai</span>
                             </a>
                             <!--end:Menu link-->
                         </div>
+                        @endif
                         <!--end:Menu item-->
 
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="#">
+                            <!-- <a class="menu-link" href="#">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Selesai</span>
-                            </a>
+                            </a> -->
                             <!--end:Menu link-->
                         </div>
                         <!--end:Menu item-->
 
                         <!--begin:Menu item-->
+                        @if(auth()->user()->role === 'technician' || auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor')
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="#">
+                            <a class="menu-link" href="{{ route('kiv-complaints.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -147,6 +154,7 @@
                             </a>
                             <!--end:Menu link-->
                         </div>
+                        @endif
                         <!--end:Menu item-->
 
                     </div>
@@ -154,6 +162,7 @@
                 </div>
                 <!--end:Menu item-->
 
+                @if(auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor')
                 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
                     <!--begin:Menu link-->
@@ -195,7 +204,9 @@
                     <!--end:Menu sub-->
                 </div>
                 <!--end:Menu item-->
+                @endif
 
+                @if(auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor')
                 <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
                     <!--begin:Menu link-->
@@ -237,6 +248,7 @@
                     <!--end:Menu sub-->
                 </div>
                 <!--end:Menu item-->
+                @endif
 
             </div>
             <!--end::Sidebar menu-->

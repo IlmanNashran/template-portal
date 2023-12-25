@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\NewComplaintController;
 use App\Http\Controllers\RespondedComplaintController;
+use App\Http\Controllers\KIVComplaintController;
 use App\Http\Controllers\ReportController;
 
 /*
@@ -37,6 +38,9 @@ Route::post('/new-complaints/{complaint}/update-status',[NewComplaintController:
 
 Route::get('/responded-complaints',[RespondedComplaintController::class, 'index'])->name('responded-complaints.index');
 Route::post('/responded-complaints/{complaint}/update-status',[RespondedComplaintController::class, 'updateStatus'])->name('responded-complaints.update-status');
+
+Route::get('/kiv-complaints',[KIVComplaintController::class, 'index'])->name('kiv-complaints.index');
+Route::post('/kiv-complaints/{complaint}/update-status',[KIVComplaintController::class, 'updateStatus'])->name('kiv-complaints.update-status');
 
 Route::get('/reports/category',[ReportController::class, 'fetchCategoryCount'])->name('reports.category');
 Route::get('/reports/status',[ReportController::class, 'fetchStatusCount'])->name('reports.status');

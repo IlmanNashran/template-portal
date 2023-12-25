@@ -29,6 +29,7 @@ return new class extends Migration
             $table->dateTime('rated_at')->nullable();
             $table->integer('rating')->nullable();
             $table->string('rating_remark')->nullable();
+            $table->string('remark')->nullable();
             $table->timestamps();
         });
     }

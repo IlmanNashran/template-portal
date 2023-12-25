@@ -38,26 +38,26 @@
                                 <div class="row">
                                     <div class="mt-3 col-md-4">
                                         <div class="card bg-light text-white">
-                                            <a href="{{route('complaints.index')}}">
+                                            <a href="#">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_complaints }}</h5>
                                                     <p class="card-text">Aduan</p>
                                                 </div>
                                                 <div class="card-footer bg-success p-2">
-                                                    <a href="{{route('complaints.index')}}" class="text-black">Lihat lebih lanjut >></a>
+                                                    <a href="#" class="text-black"></a>
                                                 </div>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="mt-3 col-md-4">
                                         <div class="card bg-light text-white">
-                                            <a href="{{route('new-complaints.index')}}">
+                                            <a href="#">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_new_complaints }}</h5>
                                                     <p class="card-text">Baharu</p>
                                                 </div>
                                                 <div class="card-footer bg-warning p-2">
-                                                    <a href="{{route('new-complaints.index')}}" class="text-black">Lihat lebih lanjut >></a>
+                                                    <a href="#" class="text-black"></a>
                                                 </div>
                                             </a>
                                         </div>
@@ -70,7 +70,7 @@
                                                     <p class="card-text">Dijawab</p>
                                                 </div>
                                                 <div class="card-footer bg-primary p-2">
-                                                    <a href="#" class="text-black">Lihat lebih lanjut >></a>
+                                                    <a href="#" class="text-black"></a>
                                                 </div>
                                             </a>
                                         </div>
@@ -83,7 +83,7 @@
                                                     <p class="card-text">Selesai</p>
                                                 </div>
                                                 <div class="card-footer bg-primary p-2">
-                                                    <a href="#" class="text-black">Lihat lebih lanjut >></a>
+                                                    <a href="#" class="text-black"></a>
                                                 </div>
                                             </a>
                                         </div>
@@ -93,10 +93,10 @@
                                             <a href="#">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_rated_complaints }}</h5>
-                                                    <p class="card-text">Dinilai</p>
+                                                    <p class="card-text">Untuk Dinilai</p>
                                                 </div>
                                                 <div class="card-footer bg-primary p-2">
-                                                    <a href="#" class="text-black">Lihat lebih lanjut >></a>
+                                                    <a href="#" class="text-black"></a>
                                                 </div>
                                             </a>
                                         </div>
@@ -109,13 +109,12 @@
                                                     <p class="card-text">KIV</p>
                                                 </div>
                                                 <div class="card-footer bg-danger p-2">
-                                                    <a href="#" class="text-black">Lihat lebih lanjut >></a>
+                                                    <a href="#" class="text-black"></a>
                                                 </div>
                                             </a>
                                         </div>
                                     </div>
                                 </row>
-                          
                             </div>
 
                         </div>

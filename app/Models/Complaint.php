@@ -42,6 +42,8 @@ class Complaint extends Model
                 return 'badge-success';
             case 'KIV':
                 return 'badge-danger';
+            case 'Ditolak':
+                return 'badge-danger';
             default:
                 return 'badge-secondary';
         }

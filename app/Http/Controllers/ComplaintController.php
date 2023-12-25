@@ -9,11 +9,20 @@ use App\Models\Category;
 
 class ComplaintController extends Controller
 {
+    
+
     public function index()
-    {   
-        $complaints = Complaint::latest()->get();
+    {
+        if (auth()->user()->role === 'staff') {
+            $user_id = auth()->user()->id;
+            $complaints = Complaint::where('user_id', $user_id)->latest()->get();
+        } else {
+            $complaints = Complaint::latest()->get();
+        }
+
         return view('complaints.index', compact('complaints'));
     }
+
 
     public function create(){
         $categories = Category::all()->sortBy('name');

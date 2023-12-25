@@ -114,10 +114,7 @@
                                                     <i class="fas fa-cog"></i>
                                                 </button>
                                                 <ul class="dropdown-menu">
-                                                    @if($complaint->status == 'Baharu')
-                                                        <li><a class="dropdown-item" href="{{ route('complaints.show', $complaint) }}">Papar</a></li>
-                                                    @endif
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route('complaints.show', $complaint) }}">Papar</a></li>
                                                 </ul>
                                                 </div>
                                             </td>
