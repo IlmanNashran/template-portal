@@ -9,7 +9,12 @@ class ToRateComplaintController extends Controller
 {
     public function index()
     {
-        $complaints = Complaint::where('user_id', auth()->user()->id)->where('status', 'Selesai')->latest()->get();
+        $complaints = Complaint::where('user_id', auth()->user()->id)
+        ->where('status', 'Selesai')
+        ->whereNull('rating')
+        ->latest()
+        ->get();
+        
         return view('to-rate-complaints.index', compact('complaints'));
     }
 
