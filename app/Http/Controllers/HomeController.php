@@ -36,7 +36,7 @@ class HomeController extends Controller
             $total_to_rate_complaints_peruser = $complaints_peruser->where('status', 'Selesai')->whereNull('rating')->count();
             $total_kiv_complaints = $complaints_peruser->where('status', 'KIV')->count();
         } elseif (auth()->user()->role === 'technician') {
-            $complaints_peruser = Complaint::where('user_id', auth()->user()->id)->get();
+            $complaints_peruser = Complaint::where('technician_id', auth()->user()->id)->get();
             $total_complaints = $complaints_peruser->count();
             $total_completed_complaints = $complaints_peruser->where('status', 'Selesai')->count();
             $total_new_complaints = $complaints_peruser->where('status', 'Baharu')->count();
