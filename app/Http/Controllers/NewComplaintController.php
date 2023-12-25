@@ -37,6 +37,7 @@ class NewComplaintController extends Controller
     public function updateTechnician(Complaint $complaint){
         $complaint->technician_id = request('technician_id');
         $complaint->supervisor_id = auth()->user()->id;
+        $complaint->supervisor_remark = request('supervisor_remark');
         $complaint->save();
 
         $message = 'Aduan ' . $complaint->report_no . ' BERJAYA dikemaskini.';

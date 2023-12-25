@@ -168,6 +168,10 @@
                                                                     @endforeach
                                                                 </select>
                                                             </div>
+                                                            <div class="mb-3">
+                                                                <textarea class="form-control" id="supervisor_remark" name="supervisor_remark" placeholder="Catatan" rows="3">{{ $complaint->supervisor_remark }}</textarea>
+                                                            </div>
+
                                                             <button type="submit" class="btn btn-sm btn-primary">
                                                                 <i class="fas fa-check"></i> Kemaskini
                                                             </button>
