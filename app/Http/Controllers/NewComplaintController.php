@@ -44,8 +44,9 @@ class NewComplaintController extends Controller
         return redirect()->route('new-complaints.index')->with('success', $message);
     }
 
-    public function updateStatus(Complaint $complaint){
+    public function updateStatus(Request $request, Complaint $complaint){
         $complaint->status = 'Dijawab';
+        $complaint->technician_remark = request('technician_remark');
         $complaint->responded_at = now();
         $complaint->save();
 
