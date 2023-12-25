@@ -115,6 +115,11 @@
                                                     <strong>Deskripsi:</strong><br>
                                                     {{ $complaint->description }}
                                                 </p>
+                                                <p class="card-text">
+                                                    <strong>PIC:</strong><br>
+                                                    {{ $complaint->technician->name }}
+                                                </p>
+                                                
                                                 @if($complaint->technician_remark)
                                                     <p class="card-text">
                                                         <strong>Catatan PIC:</strong><br>
