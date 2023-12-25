@@ -16,7 +16,10 @@ class ComplaintController extends Controller
         if (auth()->user()->role === 'staff') {
             $user_id = auth()->user()->id;
             $complaints = Complaint::where('user_id', $user_id)->latest()->get();
-        } else {
+        }elseif (auth()->user()->role === 'technician') {
+            $user_id = auth()->user()->id;
+            $complaints = Complaint::where('technician_id', $user_id)->latest()->get();
+        }else {
             $complaints = Complaint::latest()->get();
         }
 
