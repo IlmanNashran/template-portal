@@ -66,7 +66,71 @@
                         </span>
                         
 
-                        <div class="row">    
+                        <div class="row">
+                        @if(auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor') 
+                            @foreach($complaints as $complaint)
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h5>
+                                                    <i class="fas fa-file"></i> {{ $complaint->report_no ?? null }} <span class="badge {{ $complaint->getStatusBadgeClass() }}">{{ $complaint->status }}</span>
+                                                </h5>
+                                            </div>    
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="sv_manager_view">
+                                                <p class="card-text">
+                                                    <strong>Tarikh:</strong> {{ \Carbon\Carbon::parse($complaint->created_at)->format('d-m-Y') }}<br>
+                                                    ({{ \Carbon\Carbon::parse($complaint->created_at)->diffForHumans() }})
+                                                </p>
+                                                <p class="card-text">
+                                                    <strong>Pelapor: </strong>{{ $complaint->user->name }}<br>
+                                                    {{ $complaint->user->mobile_no }}
+                                                </p>
+                                                <p class="card-text">
+                                                    <strong>Blok:</strong> {{ $complaint->block }}
+                                                </p>
+                                                <p class="card-text">
+                                                    <strong>Kategori:</strong> {{ $complaint->category->name }}
+                                                </p>
+                                                <p class="card-text">
+                                                    <strong>Lokasi:</strong> {{ $complaint->location }}
+                                                </p>
+                                                <p class="card-text">
+                                                    <strong>Deskripsi:</strong><br>
+                                                    {{ $complaint->description }}
+                                                </p>
+                                                <p class="card-text">
+                                                    <strong>PIC:</strong><br>
+                                                    {{ $complaint->technician->name }}
+                                                </p>
+
+                                                <form method="post" action="{{ route('responded-complaints.update-status', $complaint) }}">
+                                                    @csrf
+                                                    <div class="mb-3">
+                                                        <select class="form-select" id="status" name="status">
+                                                            <option value="">Pilih Status</option>
+                                                            <option value="Selesai">Selesai</option>
+                                                            <option value="KIV">KIV</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <textarea class="form-control" id="technician_remark" name="technician_remark" placeholder="Catatan" rows="3">{{ $complaint->technician_remark }}</textarea>
+                                                    </div>
+
+                                                    <button type="submit" class="btn btn-sm btn-primary">
+                                                        <i class="fas fa-check"></i> Kemaskini
+                                                    </button>
+                                                </form>
+                                            </div>            
+                                        </div>
+
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                        @if(auth()->user()->role === 'technician') 
                             @foreach($complaints_technician as $complaint)
                                 <div class="col-md-4 mb-3">
                                     <div class="card">
@@ -128,6 +192,8 @@
                                     </div>
                                 </div>
                             @endforeach
+                        @endif    
+                            
                         </div>
                             
                         </div>
