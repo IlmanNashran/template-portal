@@ -55,11 +55,29 @@
 
                         <!--begin::Card body-->
                         <div class="card-body py-4">
-                            <!-- Display total complaints -->
-                            <h5 class="m-5 text-danger">Jumlah Aduan: {{$complaints->count()}}&nbsp;&nbsp;<button class="btn btn-sm btn-primary mb-3" id="toggleTable">Ringkasan</button></h5>
-                            
 
-                            <!-- Your table (hidden by default) -->
+                            <div class="mb-3">
+                                <form method="GET" action="{{ route('new-complaints.index') }}">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="No Aduan" name="search" value="{{ request('search') }}">
+                                        <button class="btn btn-primary" type="submit">
+                                            <i class="fas fa-search"></i> Cari
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="btn-group">
+                                    <a href="{{ route('new-complaints.index') }}" class="badge" style="background-color: {{ empty(request('assigned')) ? '#28a745' : '' }}; color: {{ empty(request('assigned')) ? '#fff' : '' }}">Semua</a> &nbsp;&nbsp;
+                                    <a href="{{ route('new-complaints.index', ['assigned' => 1]) }}" class="badge text-decoration-none" style="background-color: {{ request('assigned') ? '#6c757d' : '' }}; color: {{ request('assigned') ? '#fff' : '' }}">Tugas Belum Diberikan</a>
+                                </div>
+
+                                <p class="mt-2">Jumlah rekod: {{$complaints->count()}}</p>
+                            </div>
+
+                            <button class="btn btn-sm btn-primary mb-3" id="toggleTable"><i class="fas fa-table"></i>Ringkasan</button>
+
                             <table class="mb-3 table table-bordered table-hover small table-striped" id="complaintTable" style="display: none;">
                                 <thead class="thead-light">
                                     <tr>
@@ -80,17 +98,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
-                            <div class="mb-3">
-                                <form method="GET" action="{{ route('new-complaints.index') }}">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="No Aduan" name="search" value="{{ request('search') }}">
-                                        <button class="btn btn-primary" type="submit">
-                                            <i class="fas fa-search"></i> Cari
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
 
                             <div class="row">
                                 @foreach($complaints as $complaint)

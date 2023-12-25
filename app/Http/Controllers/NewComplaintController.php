@@ -11,11 +11,16 @@ class NewComplaintController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
-        
+        $assigned = $request->input('assigned');
+
         $complaints = Complaint::where('status', 'Baharu');
 
         if ($search) {
             $complaints->where('report_no', 'LIKE', '%' . $search . '%');
+        }
+
+        if ($assigned == 1) {
+            $complaints->whereNull('technician_id');
         }
 
         $complaints = $complaints->latest()->get();
@@ -26,6 +31,7 @@ class NewComplaintController extends Controller
 
         return view('new-complaints.index', compact('complaints', 'technicians'));
     }
+
 
 
     public function updateTechnician(Complaint $complaint){
