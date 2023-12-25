@@ -57,6 +57,8 @@
                         <div class="card-body py-4">
 
                         <span>Jumlah aduan: {{ $complaints->count() }}</span>
+                        <br>
+                        
                         <div class="row">
                             @foreach($complaints as $complaint)
                                 <div class="col-md-4 mb-3">

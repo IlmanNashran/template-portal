@@ -96,6 +96,7 @@
 
                                     <p class="mt-2">Jumlah aduan: {{$complaints->count()}}</p>
                                 </div>
+                                <br>
 
                                 <button class="btn btn-sm btn-primary mb-3" id="toggleTable"><i class="fas fa-table"></i>Ringkasan</button>
 
@@ -153,6 +154,10 @@
                                                         <p class="card-text">
                                                             <strong>Deskripsi:</strong><br>
                                                             {{ $complaint->description }}
+                                                        </p>
+                                                        <p class="card-text">
+                                                            <strong>PIC:</strong><br>
+                                                            {{ $complaint->technician_id->user->name }}
                                                         </p>
                                                         <form method="post" action="{{ route('new-complaints.update-technician', $complaint) }}">
                                                             @csrf
