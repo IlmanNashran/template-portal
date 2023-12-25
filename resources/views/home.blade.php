@@ -51,13 +51,13 @@
                                     </div>
                                     <div class="mt-3 col-md-4">
                                         <div class="card bg-light text-white">
-                                            <a href="#">
+                                            <a href="{{route('new-complaints.index')}}">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_new_complaints }}</h5>
                                                     <p class="card-text">Baharu</p>
                                                 </div>
                                                 <div class="card-footer bg-warning p-2">
-                                                    <a href="#" class="text-black">Lihat lebih lanjut >></a>
+                                                    <a href="{{route('new-complaints.index')}}" class="text-black">Lihat lebih lanjut >></a>
                                                 </div>
                                             </a>
                                         </div>
