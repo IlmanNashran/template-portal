@@ -12,10 +12,10 @@ class RespondedComplaintController extends Controller
 
         $complaints = Complaint::where('status', 'Dijawab');
         $complaints = $complaints->latest()->get();
-        // $complaints_technician = Complaint::where('status', 'Dijawab')
-        //     ->where('technician_id', auth()->user()->id)->get();
+        $complaints_technician = Complaint::where('status', 'Dijawab')
+            ->where('technician_id', auth()->user()->id)->get();
 
-        return view('responded-complaints.index', compact('complaints'));
+        return view('responded-complaints.index', compact('complaints', 'complaints_technician'));
     }
 
     public function updateStatus(Request $request, Complaint $complaint){

@@ -9,8 +9,7 @@ class ToRateComplaintController extends Controller
 {
     public function index()
     {
-        $complaints = Complaint::where('user_id', auth()->user()->id)
-        ->where('status', 'Selesai')
+        $complaints = Complaint::where('status', 'Selesai')
         ->whereNull('rating')
         ->latest()
         ->get();

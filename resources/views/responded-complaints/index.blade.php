@@ -67,7 +67,7 @@
                         <!-- if auth user is not supervisor or manager else $complaints->where('technician_id', auth()->user()->id)->count() -->
 
                         <div class="row">
-                            @foreach($complaints as $complaint)
+                            @foreach($complaints_technician as $complaint)
                                 <div class="col-md-4 mb-3">
                                     <div class="card">
                                         <div class="card-header">
