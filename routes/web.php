@@ -31,8 +31,8 @@ Route::post('/complaints/create',[ComplaintController::class, 'store'])->name('c
 Route::get('/complaints/{complaint}',[ComplaintController::class, 'show'])->name('complaints.show');
 
 Route::get('/new-complaints',[NewComplaintController::class, 'index'])->name('new-complaints.index');
-Route::get('/new-complaints/{complaint}',[NewComplaintController::class, 'edit'])->name('new-complaints.edit');
-Route::post('/new-complaints/{complaint}',[NewComplaintController::class, 'update'])->name('new-complaints.update');
+Route::post('/new-complaints/{complaint}/update-technician',[NewComplaintController::class, 'updateTechnician'])->name('new-complaints.update-technician');
+Route::post('/new-complaints/{complaint}/update-status',[NewComplaintController::class, 'updateStatus'])->name('new-complaints.update-status');
 
 
 Route::get('/reports/category',[ReportController::class, 'fetchCategoryCount'])->name('reports.category');
