@@ -150,11 +150,14 @@
                                                         </p>
                                                         <p class="card-text">
                                                             <strong>Lokasi:</strong> {{ $complaint->location }}
+                                                            uuuuuuuuuuuuu
                                                         </p>
                                                         <p class="card-text">
                                                             <strong>Deskripsi:</strong><br>
                                                             {{ $complaint->description }}
+                                                            jgifjhfj
                                                         </p>
+                                                        test
                                                         <p class="card-text">
                                                             <strong>Catatan Penyelia:</strong><br>
                                                             {{ $complaint->supervisor_remark }}
