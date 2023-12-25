@@ -5,7 +5,7 @@
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1">
             <span class="text-muted fw-semibold me-1">2023</span>
-            <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">e-Aduan FGVIC</a>
+            <a href="{{ route('home') }}" class="text-gray-800 text-hover-primary">e-Aduan FGVIC</a>
         </div>
         <!--end::Copyright-->
         <!--begin::Menu-->

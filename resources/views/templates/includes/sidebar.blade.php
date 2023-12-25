@@ -6,7 +6,7 @@
 <div id="kt_app_sidebar" class="app-sidebar flex-column bg-custom-gradient" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
     <div class="app-sidebar-header d-flex flex-stack d-none d-lg-flex pt-8 pb-2" id="kt_app_sidebar_header">
         <!--begin::Logo-->
-        <a href="{{ url('/')}}" class="app-sidebar-logo">
+        <a href="{{ route('home') }}" class="app-sidebar-logo">
             <h1 style="color:yellow;"><span class="italic-logo">e-</span>Aduan</h1>
         </a>
         <!--end::Logo-->
