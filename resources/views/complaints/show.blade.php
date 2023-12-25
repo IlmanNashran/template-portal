@@ -97,7 +97,25 @@
                                     <strong>Status:</strong> {{ $complaint->status ?? 'N/A' }}
                                 </li>                
                                 <li class="list-group-item">
-                                    <strong>Rating:</strong> {{ $complaint->rating ?? 'N/A' }}
+                                    <strong style="margin-bottom:5px">Rating: {{ $complaint->rating ? $complaint->rating.'/5' : '' }}</strong><br>
+                                    @if($complaint->rating === null)
+                                        <span class="badge bg-secondary">N/A</span>
+                                    @else
+                                        @php $rating = $complaint->rating; @endphp 
+                                        @foreach(range(1,5) as $i)
+                                            <span class="fa-stack" style="width:1em">
+                                                <i class="far fa-star fa-stack-1x"></i>
+                                                @if($rating >0)
+                                                    @if($rating >0.5)
+                                                        <i class="fas fa-star fa-stack-1x"></i>
+                                                    @else
+                                                        <i class="fas fa-star-half fa-stack-1x"></i>
+                                                    @endif
+                                                @endif
+                                                @php $rating--; @endphp
+                                            </span>
+                                        @endforeach
+                                    @endif       
                                 </li>
                                 <li class="list-group-item">
                                     <strong>Dinilai pada:</strong> {{ $complaint->rated_at ?? 'N/A' }}

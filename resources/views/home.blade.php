@@ -35,6 +35,13 @@
                         <!--begin::Card body-->
                         <div class="card-body py-4">
                             <div class="container mt-5">
+                                <div class="mb-3 d-flex">
+                                    <div class="ms-auto">
+                                        <a href="{{ route('complaints.create') }}" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-plus"></i> Aduan
+                                        </a>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="mt-3 col-md-4">
                                         <div class="card bg-light text-white">

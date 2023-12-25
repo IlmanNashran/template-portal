@@ -115,18 +115,16 @@
                         <!--end:Menu item-->
 
                         <!--begin:Menu item-->
-                        @if(auth()->user()->role === 'staff')
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="#">
+                            <a class="menu-link"  href="{{ route('to-rate-complaints.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">untuk Dinilai</span>
+                                <span class="menu-title">Untuk Dinilai</span>
                             </a>
                             <!--end:Menu link-->
                         </div>
-                        @endif
                         <!--end:Menu item-->
 
                         <!--begin:Menu item-->

@@ -6,6 +6,7 @@ use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\NewComplaintController;
 use App\Http\Controllers\RespondedComplaintController;
 use App\Http\Controllers\KIVComplaintController;
+use App\Http\Controllers\ToRateComplaintController;
 use App\Http\Controllers\ReportController;
 
 /*
@@ -41,6 +42,9 @@ Route::post('/responded-complaints/{complaint}/update-status',[RespondedComplain
 
 Route::get('/kiv-complaints',[KIVComplaintController::class, 'index'])->name('kiv-complaints.index');
 Route::post('/kiv-complaints/{complaint}/update-status',[KIVComplaintController::class, 'updateStatus'])->name('kiv-complaints.update-status');
+
+Route::get('/to-rate-complaints',[ToRateComplaintController::class,'index'])->name('to-rate-complaints.index');
+Route::post('/to-rate-complaints/{complaint}/update-rating',[ToRateComplaintController::class,'updateRating'])->name('to-rate-complaints.update-rating');
 
 Route::get('/reports/category',[ReportController::class, 'fetchCategoryCount'])->name('reports.category');
 Route::get('/reports/status',[ReportController::class, 'fetchStatusCount'])->name('reports.status');
