@@ -88,7 +88,7 @@
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $total_completed_complaints }}</h5>
                                                     <p class="card-text">Selesai</p>
-                                                </div>
+                                                </div> 
                                                 <div class="card-footer bg-primary p-2">
                                                     <a href="#" class="text-black"></a>
                                                 </div>
@@ -99,8 +99,20 @@
                                         <div class="card bg-light text-white">
                                             <a href="{{ route('to-rate-complaints.index') }}">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">{{ $total_rated_complaints }}</h5>
-                                                    <p class="card-text">Untuk Dinilai</p>
+                                                    <h5 class="card-title">
+                                                        @if(auth()->user()->role === 'staff' || auth()->user()->role === 'technician')
+                                                            {{ $total_to_rate_complaints_peruser }}
+                                                        @endif
+                                                        @if(auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor')
+                                                            {{ $total_to_rate_complaints_peruser }}
+                                                        @endif
+                                                        
+                                                    </h5>
+                                                    <p class="card-text">Untuk Dinilai
+                                                        @if(auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor')
+                                                            (Jumlah: {{ $total_to_rate_complaints }})
+                                                        @endif
+                                                    </p>
                                                 </div>
                                                 <div class="card-footer bg-primary p-2">
                                                     <a href="#" class="text-black"></a>

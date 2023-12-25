@@ -27,30 +27,35 @@ class HomeController extends Controller
         $today = date('d-m-Y');
 
         if (auth()->user()->role === 'staff') {
-            $complaints = Complaint::where('user_id', auth()->user()->id)->get();
-            $total_complaints = $complaints->count();
-            $total_completed_complaints = $complaints->where('status', 'Selesai')->count();
-            $total_new_complaints = $complaints->where('status', 'Baharu')->count();
-            $total_responded_complaints = $complaints->where('status', 'Dijawab')->count();
-            $total_rated_complaints = $complaints->where('status', 'Selesai')->whereNull('rating')->count();
-            $total_kiv_complaints = $complaints->where('status', 'KIV')->count();
+            $complaints_peruser = Complaint::where('user_id', auth()->user()->id)->get();
+            $total_complaints = $complaints_peruser->count();
+            $total_completed_complaints = $complaints_peruser->where('status', 'Selesai')->count();
+            $total_new_complaints = $complaints_peruser->where('status', 'Baharu')->count();
+            $total_responded_complaints = $complaints_peruser->where('status', 'Dijawab')->count();
+            $total_to_rate_complaints = $complaints_peruser->where('status', 'Selesai')->whereNull('rating')->count();
+            $total_to_rate_complaints_peruser = $complaints_peruser->where('status', 'Selesai')->whereNull('rating')->count();
+            $total_kiv_complaints = $complaints_peruser->where('status', 'KIV')->count();
         } elseif (auth()->user()->role === 'technician') {
-            $complaints = Complaint::where('technician_id', auth()->user()->id)->get();
-            $total_complaints = $complaints->count();
-            $total_completed_complaints = $complaints->where('status', 'Selesai')->count();
-            $total_new_complaints = $complaints->where('status', 'Baharu')->count();
-            $total_responded_complaints = $complaints->where('status', 'Dijawab')->count();
-            $total_rated_complaints = $complaints->where('status', 'Selesai')->whereNull('rating')->count();
-            $total_kiv_complaints = $complaints->where('status', 'KIV')->count();
+            $complaints_peruser = Complaint::where('user_id', auth()->user()->id)->get();
+            $total_complaints = $complaints_peruser->count();
+            $total_completed_complaints = $complaints_peruser->where('status', 'Selesai')->count();
+            $total_new_complaints = $complaints_peruser->where('status', 'Baharu')->count();
+            $total_responded_complaints = $complaints_peruser->where('status', 'Dijawab')->count();
+            $total_to_rate_complaints = $complaints_peruser->where('status', 'Selesai')->whereNull('rating')->count();
+            $total_to_rate_complaints_peruser = $complaints_peruser->where('status', 'Selesai')->whereNull('rating')->count();
+            $total_kiv_complaints = $complaints_peruser->where('status', 'KIV')->count();
         } else {
-            $complaints = Complaint::all();
+            $complaints_peruser = Complaint::where('user_id', auth()->user()->id)->get();
             $total_complaints = Complaint::all()->count();
             $total_completed_complaints = Complaint::where('status', 'Selesai')->count();
             $total_new_complaints = Complaint::where('status', 'Baharu')->count();
             $total_responded_complaints = Complaint::where('status', 'Dijawab')->count();
-            $total_rated_complaints = $complaints->where('status', 'Selesai')->whereNull('rating')->count();
+            $total_to_rate_complaints = Complaint::where('status', 'Selesai')->whereNull('rating')->count();
+            $total_to_rate_complaints_peruser = $complaints_peruser->where('status', 'Selesai')->whereNull('rating')->count();
             $total_kiv_complaints = Complaint::where('status', 'KIV')->count();
         }
-        return view('home', compact('today', 'complaints', 'total_complaints', 'total_completed_complaints', 'total_new_complaints', 'total_responded_complaints', 'total_rated_complaints', 'total_kiv_complaints'));
+        return view('home', compact('today', 'total_complaints', 'total_completed_complaints',
+        'total_new_complaints', 'total_responded_complaints', 'total_to_rate_complaints',
+        'total_kiv_complaints', 'complaints_peruser', 'total_to_rate_complaints_peruser'));
     }
 }

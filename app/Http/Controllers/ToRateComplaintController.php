@@ -13,8 +13,14 @@ class ToRateComplaintController extends Controller
         ->whereNull('rating')
         ->latest()
         ->get();
+
+        $complaints_peruser = Complaint::where('status', 'Selesai')
+        ->where('user_id', auth()->user()->id)
+        ->whereNull('rating')
+        ->latest()
+        ->get();
         
-        return view('to-rate-complaints.index', compact('complaints'));
+        return view('to-rate-complaints.index', compact('complaints', 'complaints_peruser'));
     }
 
     public function updateRating(Request $request, Complaint $complaint){
