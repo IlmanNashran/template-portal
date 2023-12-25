@@ -155,6 +155,10 @@
                                                             <strong>Deskripsi:</strong><br>
                                                             {{ $complaint->description }}
                                                         </p>
+                                                        <p class="card-text">
+                                                            <strong>Catatan Penyelia:</strong><br>
+                                                            {{ $complaint->supervisor_remark }}
+                                                        </p>
         
                                                         <form method="post" action="{{ route('new-complaints.update-technician', $complaint) }}">
                                                             @csrf
