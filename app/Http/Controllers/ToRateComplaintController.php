@@ -26,6 +26,7 @@ class ToRateComplaintController extends Controller
     public function updateRating(Request $request, Complaint $complaint){
         $complaint->rating = request('rating');
         $complaint->rating_remark = request('rating_remark');
+        $complaint->status = 'Dinilai';
         $complaint->rated_at = now();
         $complaint->save();
 
