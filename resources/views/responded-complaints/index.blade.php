@@ -66,14 +66,8 @@
                         </span>
                         
 
-                        <div class="row">
-                            @if(auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor') 
-                                @foreach($complaints as $complaint)
-                            @endif
-                            @if(auth()->user()->role === 'technician') 
-                                @foreach($complaints_technician as $complaint)
-                            @endif
-                            <!-- @foreach($complaints_technician as $complaint) -->
+                        <div class="row">    
+                            @foreach($complaints_technician as $complaint)
                                 <div class="col-md-4 mb-3">
                                     <div class="card">
                                         <div class="card-header">
