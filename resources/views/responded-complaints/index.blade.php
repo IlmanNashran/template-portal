@@ -67,7 +67,13 @@
                         <br>
 
                         <div class="row">
-                            @foreach($complaints_technician as $complaint)
+                            @if(auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor') 
+                                @foreach($complaints as $complaint)
+                            @endif
+                            @if(auth()->user()->role === 'technician') 
+                                @foreach($complaints_technician as $complaint)
+                            @endif
+                            <!-- @foreach($complaints_technician as $complaint) -->
                                 <div class="col-md-4 mb-3">
                                     <div class="card">
                                         <div class="card-header">
@@ -104,7 +110,7 @@
                                                     <strong>PIC:</strong><br>
                                                     {{ $complaint->technician->name }}
                                                 </p>
-                                                
+
                                                 <form method="post" action="{{ route('responded-complaints.update-status', $complaint) }}">
                                                     @csrf
                                                     <div class="mb-3">
