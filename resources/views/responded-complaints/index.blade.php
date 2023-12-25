@@ -64,7 +64,7 @@
                             {{ $complaints->where('technician_id', auth()->user()->id)->count() }}
                         @endif
                         </span>
-                        <br>
+                        
 
                         <div class="row">
                             @if(auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor') 
