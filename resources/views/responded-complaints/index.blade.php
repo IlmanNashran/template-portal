@@ -56,7 +56,16 @@
                         <!--begin::Card body-->
                         <div class="card-body py-4">
 
-                        <span>Jumlah aduan: {{ $complaints->where('technician_id', auth()->user()->id)->count() }}</span>
+                        <span>Jumlah aduan: 
+                        @if(auth()->user()->role === 'manager' || auth()->user()->role === 'supervisor') 
+                            {{ $complaints->count() }}
+                        @endif
+                        @if(auth()->user()->role === 'technician') 
+                            {{ $complaints->where('technician_id', auth()->user()->id)->count() }}
+                        @endif
+                        </span>
+                        <!-- if auth user is not supervisor or manager else $complaints->where('technician_id', auth()->user()->id)->count() -->
+
                         <div class="row">
                             @foreach($complaints as $complaint)
                                 <div class="col-md-4 mb-3">

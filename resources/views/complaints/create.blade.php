@@ -76,7 +76,8 @@
                                                 <option value="A">Blok I</option>
                                                 <option value="A">Blok J</option>
                                                 <option value="A">Bangunan BMC</option>
-                                                <option value="A">Bagunan FT</option>
+                                                <option value="A">Bangunan FT</option>
+                                                <option value="A">Lain-lain</option>
                                         </select>
                                     </div>
 
