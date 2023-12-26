@@ -9,7 +9,7 @@
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Dashboard</li>
+                        <li class="breadcrumb-item text-muted">DashboardDDD</li>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <li class="breadcrumb-item">
