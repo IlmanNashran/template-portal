@@ -63,21 +63,21 @@
                                         <label for="block" class="form-label required">Pilih Blok</label>
                                         <select class="form-select" id="block" name="block" required>
                                                 <option value="A">Blok A</option>
-                                                <option value="A">Blok A1</option>
-                                                <option value="A">Blok B</option>
-                                                <option value="A">Blok B1</option>
-                                                <option value="A">Blok C</option>
-                                                <option value="A">Blok C1</option>
-                                                <option value="A">Blok D</option>
-                                                <option value="A">Blok E</option>
-                                                <option value="A">Blok F</option>
-                                                <option value="A">Blok G</option>
-                                                <option value="A">Blok H</option>
-                                                <option value="A">Blok I</option>
-                                                <option value="A">Blok J</option>
-                                                <option value="A">Bangunan BMC</option>
-                                                <option value="A">Bangunan FT</option>
-                                                <option value="A">Lain-lain</option>
+                                                <option value="A1">Blok A1</option>
+                                                <option value="B">Blok B</option>
+                                                <option value="B1">Blok B1</option>
+                                                <option value="C">Blok C</option>
+                                                <option value="C1">Blok C1</option>
+                                                <option value="D">Blok D</option>
+                                                <option value="E">Blok E</option>
+                                                <option value="F">Blok F</option>
+                                                <option value="G">Blok G</option>
+                                                <option value="H">Blok H</option>
+                                                <option value="I">Blok I</option>
+                                                <option value="J">Blok J</option>
+                                                <option value="BMC">Bangunan BMC</option>
+                                                <option value="FT">Bangunan FT</option>
+                                                <option value="Lain-lain">Lain-lain</option>
                                         </select>
                                     </div>
 

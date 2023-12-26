@@ -105,6 +105,14 @@
                                                     <strong>PIC:</strong><br>
                                                     {{ $complaint->technician->name }}
                                                 </p>
+                                                <p class="card-text">
+                                                    <strong>Catatan Penyelia:</strong><br>
+                                                    {{ $complaint->supervisor_remark }}
+                                                </p>
+                                                <p class="card-text">
+                                                    <strong>Catatan PIC: </strong><br>
+                                                    {{ $complaint->technician_remark }}
+                                                </p>
 
                                                 <form method="post" action="{{ route('responded-complaints.update-status', $complaint) }}">
                                                     @csrf
@@ -116,7 +124,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <textarea class="form-control" id="technician_remark" name="technician_remark" placeholder="Catatan" rows="3">{{ $complaint->technician_remark }}</textarea>
+                                                        <textarea class="form-control" id="technician_remark" name="technician_remark" placeholder="Catatan" rows="3"> </textarea>
                                                     </div>
 
                                                     <button type="submit" class="btn btn-sm btn-primary">
