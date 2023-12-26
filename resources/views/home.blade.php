@@ -9,7 +9,7 @@
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">DashboardDDD</li>
+                        <li class="breadcrumb-item text-muted">Dashboard</li>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <li class="breadcrumb-item">
@@ -25,7 +25,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5>
-                                    <i class="fas fa-chart-bar"></i> DASHBOARD [{{ $today }}]
+                                    <i class="fas fa-chart-bar"></i> DASHBOARssssss [{{ $today }}]
                                 </h5>
                             </div>
                         </div>
