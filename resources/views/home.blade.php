@@ -25,11 +25,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5>
-<<<<<<< HEAD
                                     <i class="fas fa-chart-bar"></i> TESTING DASHBOARD [{{ $today }}]
-=======
-                                    <i class="fas fa-chart-bar"></i> DASHBOARssssss [{{ $today }}]
->>>>>>> a72a8a6585649e2ce3322f093a5419d402e3cddb
                                 </h5>
                             </div>
                         </div>
