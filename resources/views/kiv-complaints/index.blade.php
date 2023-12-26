@@ -98,6 +98,13 @@
                                                     {{ $complaint->technician->name }}
                                                 </p>
                                                 
+                                                @if($complaint->supervisor_remark)
+                                                    <p class="card-text">
+                                                        <strong>Catatan Penyelia:</strong><br>
+                                                        {{ $complaint->supervisor_remark }}
+                                                    </p>
+                                                @endif
+
                                                 @if($complaint->technician_remark)
                                                     <p class="card-text">
                                                         <strong>Catatan PIC:</strong><br>
@@ -105,12 +112,7 @@
                                                     </p>
                                                 @endif
 
-                                                @if($complaint->supervisor_remark)
-                                                    <p class="card-text">
-                                                        <strong>Catatan Penyelia:</strong><br>
-                                                        {{ $complaint->supervisor_remark }}
-                                                    </p>
-                                                @endif
+                                                
                                                 <form method="post" action="{{ route('kiv-complaints.update-status', $complaint) }}">
                                                     @csrf
                                                     <div class="mb-3">
