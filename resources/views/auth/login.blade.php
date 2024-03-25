@@ -41,7 +41,7 @@
                                         <h2 class="mt-1 mb-3 pb-1" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                                             <b>
                                                 <i class="fas fa-user" style="font-size: 1.2em;"></i> <!-- User icon with maroon color -->
-                                                <span style="font-style: italic;">e</span><span>-Aduan </span><span style="color: #800000;">FGVIC</span>
+                                                <span style="font-style: italic;">Template</span>
                                             </b>
                                         </h2>                                 
                                     </div>
